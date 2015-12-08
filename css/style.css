@@ -13,3 +13,43 @@ body {
 #test-div {
   display: flex;
 }
+
+#painting-div {
+  position: absolute;
+  left: 380px;
+  top: 200px;
+  width: 133px;
+  height: 175px;
+}
+
+#bell-div {
+  position: absolute;
+  left: 835px;
+  top: 175px;
+  width: 74px;
+  height: 63px;
+}
+
+#lock-div {
+  position: absolute;
+  left: 1005px;
+  top: 555px;
+  width: 38px;
+  height: 43px;
+}
+
+#machine-div {
+  position: absolute;
+  left:242px;
+  top: 248px;
+  width: 137px;
+  height: 311px;
+}
+
+#music-div {
+  position: absolute;
+  left: 752px;
+  top: 327px;
+  width: 63px;
+  height: 56px;
+}
