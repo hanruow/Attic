@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 957px;
+  height: 685px;
+  background: url('../bg/attic-full.jpg');
+  margin: 0 auto;
+}
+
+#test-div {
+  display: flex;
+}
