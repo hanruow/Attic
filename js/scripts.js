@@ -1,6 +1,6 @@
 /* Load sounds */
 var bell_sound = new Audio("sound/Bell.mp3");
-var box_music = new Audio("sound/Music.mp3"); //update with music box sound!
+var bg_music = new Audio("sound/Music.mp3"); //update with music box sound!
 
 /* Click Events */
 
@@ -19,7 +19,6 @@ function bell_stop() {
 function box_start() {
   var element = document.getElementById("box");
   element.setAttribute('src', 'anim/GIFs/music-box.gif');
-  box_music.play();
   window.setTimeout(box_stop, 5000);
 }
 

@@ -10,16 +10,13 @@ body {
   margin: 0 auto;
 }
 
-#test-div {
-  display: flex;
-}
-
-#painting-div {
+#bed-div {
   position: absolute;
   left: 380px;
-  top: 200px;
-  width: 133px;
-  height: 175px;
+  top: 395px;
+  width: 739px;
+  height: 154px;
+  z-index: 2;
 }
 
 #bell-div {
@@ -30,12 +27,31 @@ body {
   height: 63px;
 }
 
+#chest-div {
+  position: absolute;
+  left: 967px;
+  top: 492px;
+  width: 206px;
+  height: 173px;
+  z-index: 3;
+}
+
+#drawer-div {
+  position: absolute;
+  left: 749px;
+  top: 353px;
+  width: 133px;
+  height: 133px;
+  z-index: 0;
+}
+
 #lock-div {
   position: absolute;
   left: 1005px;
   top: 555px;
   width: 38px;
   height: 43px;
+  z-index: 4;
 }
 
 #machine-div {
@@ -52,4 +68,28 @@ body {
   top: 327px;
   width: 63px;
   height: 56px;
+}
+
+#notes-div {
+  position: absolute;
+  left: 920px;
+  top: 315px;
+  width: 109px;
+  height: 85px;
+}
+
+#painting-div {
+  position: absolute;
+  left: 380px;
+  top: 200px;
+  width: 133px;
+  height: 175px;
+}
+
+#rug-div {
+  position: absolute;
+  left: 505px;
+  top: 519px;
+  width: 304px;
+  height: 116px;
 }
