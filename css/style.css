@@ -6,13 +6,13 @@ body {
 .container {
   width: 957px;
   height: 685px;
-  background: url('../bg/attic-full.jpg');
+  background: url('../bg/attic.jpg');
   /* margin: 0 auto; */
 }
 
 #bed-div {
   position: absolute;
-  left: 380px;
+  left: 148px;
   top: 395px;
   width: 739px;
   height: 154px;
@@ -21,15 +21,24 @@ body {
 
 #bell-div {
   position: absolute;
-  left: 835px;
+  left: 603px;
   top: 175px;
   width: 74px;
   height: 63px;
+  z-index: 1;
+}
+
+#binoculars-div {
+  position: absolute;
+  left: 189px;
+  top: 212px;
+  width: 192px;
+  height: 346px;
 }
 
 #chest-div {
   position: absolute;
-  left: 967px;
+  left: 733px;
   top: 492px;
   width: 206px;
   height: 173px;
@@ -38,16 +47,32 @@ body {
 
 #drawer-div {
   position: absolute;
-  left: 749px;
+  left: 517px;
   top: 353px;
   width: 133px;
   height: 133px;
   z-index: 0;
 }
 
+#holder-div {
+  position: absolute;
+  left: 629px;
+  top: 136px;
+  z-index: 0;
+}
+
+#journal-div {
+  position: absolute;
+  left: 428px;
+  top: 375px;
+  width: 114px;
+  height: 45px;
+  z-index: 2;
+}
+
 #lock-div {
   position: absolute;
-  left: 1005px;
+  left: 772px;
   top: 555px;
   width: 38px;
   height: 43px;
@@ -64,7 +89,7 @@ body {
 
 #music-div {
   position: absolute;
-  left: 752px;
+  left: 520px;
   top: 327px;
   width: 63px;
   height: 56px;
@@ -72,7 +97,7 @@ body {
 
 #notes-div {
   position: absolute;
-  left: 920px;
+  left: 688px;
   top: 315px;
   width: 109px;
   height: 85px;
@@ -80,7 +105,7 @@ body {
 
 #painting-div {
   position: absolute;
-  left: 380px;
+  left: 145px;
   top: 200px;
   width: 133px;
   height: 175px;
@@ -88,8 +113,24 @@ body {
 
 #rug-div {
   position: absolute;
-  left: 505px;
+  left: 273px;
   top: 519px;
   width: 304px;
   height: 116px;
+}
+
+#table-div {
+  position: absolute;
+  left: 336px;
+  top: 398px;
+  width: 221px;
+  height: 102px;
+  z-index: 1;
+}
+
+#web-div {
+  position: absolute;
+  left: 577px;
+  width: 115px;
+  height: 97px;
 }

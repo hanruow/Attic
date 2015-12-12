@@ -3,7 +3,6 @@ var bell_sound = new Audio("sound/Bell.mp3");
 var bg_music = new Audio("sound/Music.mp3"); //update with music box sound!
 
 /* Click Events */
-
 function bell_start() {
   var element = document.getElementById("bell");
   element.setAttribute('src', 'anim/GIFs/bell.gif');
