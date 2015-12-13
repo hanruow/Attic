@@ -1,6 +1,13 @@
 /* Load sounds */
 var bell_sound = new Audio("sound/Bell.mp3");
-var bg_music = new Audio("sound/Music.mp3"); //update with music box sound!
+var box_sound = new Audio("sound/Music\ Box\ Sound\ Effect.mp3");
+var sea_sound = new Audio("sound/Sea\ Sound\ Effect.mp3");
+var bg_music = new Audio("sound/Music.mp3");
+
+function random_events() {
+  var time = (Math.random() * 5000) + 5000; //random event every 5-10 secs
+  setTimeout()
+}
 
 /* Click Events */
 function bell_start() {
@@ -18,11 +25,14 @@ function bell_stop() {
 function box_start() {
   var element = document.getElementById("box");
   element.setAttribute('src', 'anim/GIFs/music-box.gif');
-  window.setTimeout(box_stop, 5000);
+  box_sound.play();
+  window.setTimeout(box_stop, 17000);
 }
 
 function box_stop() {
   var element = document.getElementById("box");
+  box_sound.pause();
+  box_sound.load();
   element.setAttribute('src', 'fg/music-box.png');
 }
 
@@ -66,9 +76,12 @@ function machine_unhover(element) {
 }
 
 function painting_hover(element) {
+  sea_sound.play();
   element.setAttribute('src', 'anim/GIFs/painting.gif');
 }
 
 function painting_unhover(element) {
+  sea_sound.pause();
+  sea_sound.load();
   element.setAttribute('src', 'fg/painting.png');
 }
