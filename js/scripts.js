@@ -26,6 +26,10 @@ function box_stop() {
   element.setAttribute('src', 'fg/music-box.png');
 }
 
+function journal_open() {
+  alert("open journal");
+}
+
 function lock_start() {
   var element = document.getElementById("lock");
   element.setAttribute('src', 'anim/GIFs/lock.gif');
@@ -35,6 +39,15 @@ function lock_start() {
 function lock_stop() {
   var element = document.getElementById("lock");
   element.setAttribute('src', 'fg/lock.png');
+}
+
+function notes_open() {
+  alert("open notes");
+  $('#notes-popup').fadeIn();
+}
+
+function notes_close() {
+  $('#notes-popup').fadeOut();
 }
 
 /* Hover Events */

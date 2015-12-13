@@ -5,9 +5,8 @@
 
     <title>Media Synthesis Final</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
   </head>
   <body>
     <div class="container">
@@ -30,14 +29,13 @@
           <img src="fg/bell.png" onclick="bell_start();" id="bell"/>
         </div>
         <div id="journal-div">
-          <img src="fg/journal.png" onclick="open_journal();" id="journal"/>
+          <img src="fg/journal.png" onclick="journal_open();" id="journal"/>
         </div>
         <div id="music-div">
           <img src="fg/music-box.png" onclick="box_start();" id="box"/>
         </div>
         <div id="notes-div">
-          <a href="#notes-popup" data-rel="popup" data-position-to="window">
-            <img src="fg/notes.png" id="notes"/>
+            <img src="fg/notes.png" onclick="notes_open();" id="notes"/>
           </a>
         </div>
 
@@ -68,7 +66,6 @@
         </div>
       </div>
       <div id="notes-popup" data-role="popup">
-        <a href="#main-div" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
         <img src="popup-random/notes-popup.png"/>
       </div>
     </div>
