@@ -27,7 +27,12 @@ function box_stop() {
 }
 
 function journal_open() {
-  alert("open journal");
+  $('#notes-popup').fadeOut();
+  $('#journal-popup').fadeIn();
+}
+
+function journal_close() {
+  $('#journal-popup').fadeOut();
 }
 
 function lock_start() {
@@ -42,7 +47,7 @@ function lock_stop() {
 }
 
 function notes_open() {
-  alert("open notes");
+  $('#journal-popup').fadeOut();
   $('#notes-popup').fadeIn();
 }
 
