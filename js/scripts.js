@@ -2,11 +2,20 @@
 var bell_sound = new Audio("sound/Bell.mp3");
 var box_sound = new Audio("sound/Music\ Box\ Sound\ Effect.mp3");
 var sea_sound = new Audio("sound/Sea\ Sound\ Effect.mp3");
+var whisper_sound = new Audio("sound/Whispers.mp3");
+var laugh_sound = new Audio("sound/Evil\ Laugh.mp3");
 var bg_music = new Audio("sound/Music.mp3");
+var flag = false;
 
 function random_events() {
-  var time = (Math.random() * 5000) + 5000; //random event every 5-10 secs
-  setTimeout()
+  var events = [tap_window, whisper, laugh];
+  var time = Math.floor((Math.random() * 5000) + 10000); //random event every 10-15 secs
+  var random_event = Math.floor(Math.random() * events.length);
+  if(flag) {
+    events[random_event]();
+  }
+  setTimeout(random_events, time);
+  flag = true;
 }
 
 /* Click Events */
@@ -59,10 +68,19 @@ function lock_stop() {
 function notes_open() {
   $('#journal-popup').fadeOut();
   $('#notes-popup').fadeIn();
+  setTimeout(notes_blink, 2000);
+  var element = document.getElementById("big_notes");
+  element.setAttribute('src', 'popup-random/notes-popup.png');
+  setTimeout(notes_blink, 5000);
 }
 
 function notes_close() {
   $('#notes-popup').fadeOut();
+}
+
+function notes_blink() {
+  var element = document.getElementById("big_notes");
+  element.setAttribute('src', 'anim/GIFs/notes.gif');
 }
 
 /* Hover Events */
@@ -84,4 +102,37 @@ function painting_unhover(element) {
   sea_sound.pause();
   sea_sound.load();
   element.setAttribute('src', 'fg/painting.png');
+}
+
+/* Random Events */
+function tap_window() {
+  var element = document.getElementById('window');
+  element.setAttribute('visibility', 'visible');
+  element.setAttribute('src', 'anim/GIFs/window.gif');
+  setTimeout(reset_window, 2000);
+}
+
+function reset_window() {
+  var element = document.getElementById('window');
+  element.setAttribute('visibility', 'hidden');
+}
+
+function whisper() {
+  whisper_sound.play();
+  setTimeout(whisper_stop, 8000);
+}
+
+function whisper_stop() {
+  whisper_sound.pause();
+  whisper_sound.load();
+}
+
+function laugh() {
+   laugh_sound.play();
+   setTimeout(laugh_stop, 5000);
+ }
+
+function laugh_stop() {
+  laugh_sound.pause();
+  laugh_sound.load();
 }

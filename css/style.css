@@ -34,6 +34,7 @@ body {
   top: 212px;
   width: 192px;
   height: 346px;
+  z-index: 0;
 }
 
 #chest-div {
@@ -129,6 +130,7 @@ body {
   top: 200px;
   width: 133px;
   height: 175px;
+  z-index: 1;
 }
 
 #rug-div {
@@ -153,4 +155,16 @@ body {
   left: 577px;
   width: 115px;
   height: 97px;
+}
+
+#window-div {
+  position: absolute;
+  left: 396px;
+  top: 165px;
+  width: 212px;
+  height: 167px;
+}
+
+#window {
+  visibilty: hidden;
 }

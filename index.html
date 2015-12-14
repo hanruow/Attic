@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/scripts.js"></script>
   </head>
-  <body>
+  <body onload="random_events();">
     <div class="container">
       <div id="main-div">
         <!-- Hover interactables -->
@@ -64,15 +64,19 @@
         <div id="web-div">
           <img src="fg/spider-web.png"/>
         </div>
+        <div id="window-div">
+          <img id="window"/>
+        </div>
       </div>
 
-      <!-- Pop Ups -->
-      <div id="journal-popup" data-role="popup">
-        <img src="popup-random/journal-popup.png" onclick="journal_close();"/>
-      </div>
-      <div id="notes-popup" data-role="popup">
-        <img src="popup-random/notes-popup.png" onclick="notes_close();"/>
-      </div>
+    </div>
+
+    <!-- Pop Ups -->
+    <div id="journal-popup" data-role="popup">
+      <img src="popup-random/journal-popup.png" onclick="journal_close();"/>
+    </div>
+    <div id="notes-popup" data-role="popup">
+      <img src="popup-random/notes-popup.png" onclick="notes_close();" id="big_notes"/>
     </div>
   </body>
 </html>
