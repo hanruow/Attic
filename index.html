@@ -4,13 +4,17 @@
     <meta charset="utf-8">
 
     <title>Media Synthesis Final</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/scripts.js"></script>
   </head>
-  <body onload="random_events();">
-    <div class="container">
-      <div id="main-div">
+  <body onload="load_page();">
+    <div id="container">
+      <div id="main-panel">
         <!-- Hover interactables -->
         <div id="painting-div">
           <img src="fg/painting.png" onmouseover="painting_hover(this);"
@@ -68,7 +72,13 @@
           <img id="window"/>
         </div>
       </div>
-
+      <div id="side-panel">
+        <div id="mute-div">
+          <button type="button" onclick="mute();" id="mute">
+            <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Pop Ups -->

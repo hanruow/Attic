@@ -1,13 +1,28 @@
 body {
   background-color: black;
-  color: white;
+  color: black;
 }
 
-.container {
+span.glyphicon {
+  font-size: 1.5em;
+}
+
+#container {
+  background: url('../bg/attic.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  /* margin: 0 auto; */
+}
+
+#main-panel {
   width: 957px;
   height: 685px;
-  background: url('../bg/attic.jpg');
-  /* margin: 0 auto; */
+}
+
+#side-panel {
+  background-color: red;
+  width: 100px;
+  height: 200px;
 }
 
 #bed-div {

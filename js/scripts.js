@@ -7,6 +7,12 @@ var laugh_sound = new Audio("sound/Evil\ Laugh.mp3");
 var bg_music = new Audio("sound/Music.mp3");
 var flag = false;
 
+/* Meta Functions */
+function load_page() {
+  bg_music.play();
+  random_events();
+}
+
 function random_events() {
   var events = [tap_window, whisper, laugh];
   var time = Math.floor((Math.random() * 5000) + 10000); //random event every 10-15 secs
@@ -15,7 +21,21 @@ function random_events() {
     events[random_event]();
   }
   setTimeout(random_events, time);
-  flag = true;
+  //flag = true;
+}
+
+function mute() {
+  var element = document.getElementById('mute');
+  element.innerHTML = "<span class=\"glyphicon glyphicon-volume-off\" aria-hidden=\"true\"></span>";
+  element.onclick = unmute;
+  bg_music.pause();
+}
+
+function unmute() {
+  var element = document.getElementById('mute');
+  element.innerHTML = "<span class=\"glyphicon glyphicon-volume-up\" aria-hidden=\"true\"></span>";
+  element.onclick = mute;
+  bg_music.play();
 }
 
 /* Click Events */
@@ -68,9 +88,6 @@ function lock_stop() {
 function notes_open() {
   $('#journal-popup').fadeOut();
   $('#notes-popup').fadeIn();
-  setTimeout(notes_blink, 2000);
-  var element = document.getElementById("big_notes");
-  element.setAttribute('src', 'popup-random/notes-popup.png');
   setTimeout(notes_blink, 5000);
 }
 
@@ -81,6 +98,13 @@ function notes_close() {
 function notes_blink() {
   var element = document.getElementById("big_notes");
   element.setAttribute('src', 'anim/GIFs/notes.gif');
+  setTimeout(notes_unblink, 5000);
+}
+
+function notes_unblink() {
+  var element = document.getElementById("big_notes");
+  element.setAttribute('src', 'popup-random/notes-popup.png');
+  setTimeout(notes_blink, 5000);
 }
 
 /* Hover Events */
