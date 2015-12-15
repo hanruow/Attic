@@ -69,13 +69,19 @@
           <img src="fg/spider-web.png"/>
         </div>
         <div id="window-div">
-          <img id="window"/>
+          <img src="anim/GIFs/window.gif" id="window"/>
         </div>
       </div>
       <div id="side-panel">
         <div id="mute-div">
           <button type="button" onclick="mute();" id="mute">
             <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+          </button>
+          <button type="button" onclick="brighten();" id="bright">
+            Brighten
+          </button>
+          <button type="button" onclick="darken();" id="dark">
+            Darken
           </button>
         </div>
       </div>
@@ -86,7 +92,13 @@
       <img src="popup-random/journal-popup.png" onclick="journal_close();"/>
     </div>
     <div id="notes-popup" data-role="popup">
-      <img src="popup-random/notes-popup.png" onclick="notes_close();" id="big_notes"/>
+      <img src="anim/GIFs/notes.gif" onclick="notes_close();" id="big_notes"/>
+    </div>
+    <div id="dipper-popup" data-role="popup">
+      <img src="popup-random/dipper.png" id="dipper"/>
+    </div>
+    <div id="mabel-popup">
+      <img src="popup-random/mabel.png" id="mabel"/>
     </div>
   </body>
 </html>

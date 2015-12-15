@@ -1,34 +1,38 @@
 body {
   background-color: black;
-  color: black;
+  color: white;
 }
 
 span.glyphicon {
-  font-size: 1.5em;
+  font-size: 2em;
+}
+
+button {
+  background-color: black;
+  border: none;
 }
 
 #container {
-  background: url('../bg/attic.jpg');
-  background-repeat: no-repeat;
   display: flex;
   /* margin: 0 auto; */
 }
 
 #main-panel {
+  background: url('../bg/attic.jpg');
+  background-repeat: no-repeat;
   width: 957px;
   height: 685px;
 }
 
 #side-panel {
-  background-color: red;
   width: 100px;
   height: 200px;
 }
 
 #bed-div {
   position: absolute;
-  left: 148px;
-  top: 395px;
+  left: 140px;
+  top: 387px;
   width: 739px;
   height: 154px;
   z-index: 2;
@@ -36,8 +40,8 @@ span.glyphicon {
 
 #bell-div {
   position: absolute;
-  left: 603px;
-  top: 175px;
+  left: 595px;
+  top: 167px;
   width: 74px;
   height: 63px;
   z-index: 1;
@@ -45,8 +49,8 @@ span.glyphicon {
 
 #binoculars-div {
   position: absolute;
-  left: 189px;
-  top: 212px;
+  left: 181px;
+  top: 204px;
   width: 192px;
   height: 346px;
   z-index: 0;
@@ -54,17 +58,25 @@ span.glyphicon {
 
 #chest-div {
   position: absolute;
-  left: 733px;
-  top: 492px;
+  left: 725px;
+  top: 484px;
   width: 206px;
   height: 173px;
   z-index: 3;
 }
 
+#dipper-popup {
+  position: absolute;
+  left: 250px;
+  top: 290px;
+  z-index: 5;
+  display: none;
+}
+
 #drawer-div {
   position: absolute;
-  left: 517px;
-  top: 353px;
+  left: 509px;
+  top: 345px;
   width: 133px;
   height: 133px;
   z-index: 0;
@@ -72,25 +84,25 @@ span.glyphicon {
 
 #holder-div {
   position: absolute;
-  left: 629px;
-  top: 136px;
+  left: 621px;
+  top: 128px;
   z-index: 0;
 }
 
 #journal-div {
   position: absolute;
-  left: 428px;
-  top: 375px;
+  left: 420px;
+  top: 367px;
   width: 114px;
   height: 45px;
-  z-index: 2;
+  z-index: 3;
 }
 
 #journal-popup {
   position: absolute;
   display: none;
-  left: 175px;
-  top: 135px;
+  left: 167px;
+  top: 128px;
   width: 561px;
   height: 390px;
   z-index: 5;
@@ -98,33 +110,42 @@ span.glyphicon {
 
 #lock-div {
   position: absolute;
-  left: 772px;
-  top: 555px;
+  left: 764px;
+  top: 548px;
   width: 38px;
   height: 43px;
   z-index: 4;
 }
 
+#mabel-popup {
+  position: absolute;
+  left: 600px;
+  top: 325px;
+  z-index: 5;
+  display: none;
+}
+
 #machine-div {
   position: absolute;
-  left:10px;
-  top: 248px;
+  left: 2px;
+  top: 240px;
   width: 137px;
   height: 311px;
 }
 
 #music-div {
   position: absolute;
-  left: 520px;
-  top: 327px;
+  left: 512px;
+  top: 319px;
   width: 63px;
   height: 56px;
+  z-index: 1;
 }
 
 #notes-div {
   position: absolute;
-  left: 688px;
-  top: 315px;
+  left: 680px;
+  top: 307px;
   width: 109px;
   height: 85px;
 }
@@ -132,8 +153,8 @@ span.glyphicon {
 #notes-popup{
   position: absolute;
   display: none;
-  left: 250px;
-  top: 150px;
+  left: 260px;
+  top: 140px;
   width: 390px;
   height: 453px;
   z-index: 5;
@@ -141,8 +162,8 @@ span.glyphicon {
 
 #painting-div {
   position: absolute;
-  left: 145px;
-  top: 200px;
+  left: 137px;
+  top: 192px;
   width: 133px;
   height: 175px;
   z-index: 1;
@@ -150,16 +171,16 @@ span.glyphicon {
 
 #rug-div {
   position: absolute;
-  left: 273px;
-  top: 519px;
+  left: 265px;
+  top: 511px;
   width: 304px;
   height: 116px;
 }
 
 #table-div {
   position: absolute;
-  left: 336px;
-  top: 398px;
+  left: 328px;
+  top: 390px;
   width: 221px;
   height: 102px;
   z-index: 1;
@@ -167,19 +188,16 @@ span.glyphicon {
 
 #web-div {
   position: absolute;
-  left: 577px;
+  left: 569px;
   width: 115px;
   height: 97px;
 }
 
 #window-div {
   position: absolute;
-  left: 396px;
-  top: 165px;
+  left: 388px;
+  top: 157px;
   width: 212px;
   height: 167px;
-}
-
-#window {
-  visibilty: hidden;
+  display: none;
 }
