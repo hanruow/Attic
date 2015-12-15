@@ -2,11 +2,18 @@
 var bell_sound = new Audio("sound/Bell.mp3");
 var box_sound = new Audio("sound/Music\ Box\ Sound\ Effect.mp3");
 var sea_sound = new Audio("sound/Sea\ Sound\ Effect.mp3");
+var lock_sound = new Audio("sound/Lock.wav");
+var knock_sound = new Audio("sound/Knock.wav");
+var journal_sound = new Audio("sound/Book.wav");
+var note_sound = new Audio("sound/Paper.wav");
+var giggle_sound = new Audio("sound/Giggle.wav");
 var whisper_sound = new Audio("sound/Whispers.mp3");
 var laugh_sound = new Audio("sound/Evil\ Laugh.mp3");
+var creak_sound = new Audio("sound/Creaking_Door_or_Chest.wav");
 var lightning_sound = new Audio("sound/Lightning.wav");
 var bg_music = new Audio("sound/Music.mp3");
-var sounds = [bell_sound, box_sound, sea_sound, whisper_sound, laugh_sound, lightning_sound, bg_music];
+var sounds = [bell_sound, box_sound, sea_sound, whisper_sound, lock_sound, knock_sound,
+              journal_sound, note_sound, giggle_sound, laugh_sound, lightning_sound, bg_music];
 var brightness = 100;
 var mute_flag = false;
 var flag = false;
@@ -19,7 +26,7 @@ function load_page() {
 }
 
 function random_events() {
-  var events = [tap_window, whisper, laugh, lightning];
+  var events = [tap_window, whisper, laugh, lightning, creak];
   var time = Math.floor((Math.random() * 10000) + 20000); //random event every 20-30 secs
   var random_event = Math.floor(Math.random() * events.length);
   if(flag) {
@@ -35,9 +42,8 @@ function mute() {
   element.onclick = unmute;
   mute_flag = true;
   for(var x = 0; x < sounds.length; x++) {
-    sounds[x].volume = 0;
+    sounds[x].muted = true;
   }
-  bg_music.pause();
 }
 
 function unmute() {
@@ -46,9 +52,8 @@ function unmute() {
   element.onclick = mute;
   mute_flag = false;
   for(var x = 0; x < sounds.length; x++) {
-    sounds[x].volume = 1;
+    sounds[x].muted = false;
   }
-  bg_music.play();
 }
 
 function brighten() {
@@ -80,31 +85,37 @@ function bell_stop() {
 }
 
 function box_start() {
-  var element = document.getElementById("box");
-  element.setAttribute('src', 'anim/GIFs/music-box.gif');
   if(!mute_flag) {
     bg_music.pause();
     box_sound.play();
   }
+  var element = document.getElementById("box");
+  element.setAttribute('src', 'anim/GIFs/music-box.gif');
   window.setTimeout(box_stop, 16500);
 }
 
 function box_stop() {
-  var element = document.getElementById("box");
   if(!mute_flag) {
     box_sound.pause();
     box_sound.load();
     bg_music.play();
   }
+  var element = document.getElementById("box");
   element.setAttribute('src', 'fg/music-box.png');
 }
 
 function journal_open() {
+  if(!mute_flag)
+    journal_sound.play();
   $('#notes-popup').fadeOut();
   $('#journal-popup').fadeIn();
 }
 
 function journal_close() {
+  if(!mute_flag) {
+    journal_sound.pause();
+    journal_sound.load();
+  }
   $('#journal-popup').fadeOut();
   var dipper_chance = Math.floor(Math.random() * 10);
   /* 1/10 chance of Dipper appearing */
@@ -113,23 +124,35 @@ function journal_close() {
 }
 
 function lock_start() {
+  if(!mute_flag)
+    lock_sound.play();
   var element = document.getElementById("lock");
   element.setAttribute('src', 'anim/GIFs/lock.gif');
   window.setTimeout(lock_stop, 700);
 }
 
 function lock_stop() {
+  if(!mute_flag) {
+    lock_sound.pause();
+    lock_sound.load();
+  }
   var element = document.getElementById("lock");
   element.setAttribute('src', 'fg/lock.png');
 }
 
 function notes_open() {
+  if(!mute_flag)
+    note_sound.play();
   $('#journal-popup').fadeOut();
   $('#notes-popup').fadeIn();
   setTimeout(notes_blink, 10000);
 }
 
 function notes_close() {
+  if(!mute_flag) {
+    note_sound.pause();
+    note_sound.load();
+  }
   $('#notes-popup').fadeOut();
   var mabel_chance = Math.floor(Math.random() * 10);
   /* 1/10 chance of Mabel appearing */
@@ -145,10 +168,16 @@ function notes_blink() {
 
 /* Hover Events */
 function machine_hover(element) {
+  if(!mute_flag)
+    giggle_sound.play();
   element.setAttribute('src', 'anim/GIFs/machine.gif');
 }
 
 function machine_unhover(element) {
+  if(!mute_flag) {
+    giggle_sound.pause();
+    giggle_sound.load();
+  }
   element.setAttribute('src', 'fg/machine.png');
 }
 
@@ -167,6 +196,19 @@ function painting_unhover(element) {
 }
 
 /* Random Events */
+function creak() {
+  if(!mute_flag)
+    creak_sound.play();
+  setTimeout(creak_stop, 5000);
+}
+
+function creak_stop() {
+  if(!mute_flag) {
+    creak_sound.pause();
+    creak_sound.load();
+  }
+}
+
 function dipper_appear() {
   $('#dipper-popup').fadeIn();
   setTimeout(dipper_disappear, 500);
@@ -227,6 +269,8 @@ function lightning_unflash() {
 }
 
 function tap_window() {
+  if(!mute_flag)
+    knock_sound.play();
   var element = document.getElementById('window');
   element.setAttribute('src', 'anim/GIFs/window.gif');
   $('#window-div').show();
